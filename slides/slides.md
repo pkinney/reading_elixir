@@ -155,6 +155,7 @@ end
 
 ```elixir
 [1, 2, 3] === [1 | [2, 3]]
+[1, 2] ++ [3, 4] === [1, 2, 3, 4]
 ```
 
 ### Keyword List
@@ -200,7 +201,6 @@ m1 === %{a: 1, b: "two", c: "three"}
 ```
 ]
 
-
 ---
 
 .left-column[
@@ -228,19 +228,153 @@ u.__struct__ === User
 .left-column[
 ## What is it?
 ## Organization
-## Types
-## Functions
-## Flow Control
-## Enum
-## Pattern Matching
-## **Not Covered**
+## **Types**
 ]
 .right-column[
-### Structs
+### Strings
 
-- with
+```elixir
+name = "john"
+"Hello, #{String.capitalize name}!"
+"Hello, " <> String.capitalize(name) <> "!"
+
+~w{one two three} === ["one", "two", "three"]
+```
+
+### Char List
+
+```elixir
+is_binary("Hello") === true
+is_list('Hello') === true
+
+'Hello, ' ++ to_char_list(String.capitalize(name)) ++ '!'
+```
 ]
 
 ---
 
-# Questions?
+.left-column[
+## What is it?
+## Organization
+## Types
+## **Functions**
+]
+.right-column[
+### Anonymous Functions
+
+```elixir
+square = fn n -> n*n end
+square.(3) === 9
+
+add = &(&1 + &2)
+add.(1, 2) === 3
+
+dcase = &String.downcase/1
+dcase.("HeLLO") === "hello"
+```
+]
+
+---
+
+.left-column[
+## What is it?
+## Organization
+## Types
+## **Functions**
+]
+.right-column[
+### Pattern Matching
+
+```elixir
+square = fn
+  1 -> "1, duh!"
+  n -> n*n
+end
+square.(1) === "1, duh"
+square.(2) === 4
+```
+
+```elixir
+divide = fn
+  0, _ -> 0
+  _, 0 -> :nan
+  a, 1 -> a
+  a, b -> a / b
+end
+divide.(1, 0) === :nan
+divide.(2, 1) === 2
+divide.(12, 4) === 3.0
+```
+]
+
+---
+
+.left-column[
+## What is it?
+## Organization
+## Types
+## **Functions**
+]
+.right-column[
+### Module Functions
+
+```elixir
+defmodule MyMath do
+  def sub(a, b \\ 0)
+  def sub(a, 0), do: a
+  def sub(a, b) when a === b, do: 0
+  def sub(a, b) when is_integer(a) and is_integer(b) do
+    a - b
+  end
+end
+
+MyMath.sub(3) === 3
+MyMath.sub(1, 0) === 1
+MyMath.sub(2, 2) === 0
+MyMath.sub(2, :sandwich)
+** (FunctionClauseError) no function clause matching in MyMath.sub/2
+    iex:21: MyMath.sub(2, :sandwich)
+```
+]
+
+---
+.left-column[
+## What is it?
+## Organization
+## Types
+## **Functions**
+]
+.right-column[
+### List Recursion with Functions
+
+```elixir
+defmodule MyMath do
+  def sum([]), do: 0
+  def sum([a | tail]) do
+    a + sum(tail)
+  end
+end
+
+MyMath.sum([1, 2, 3]) === 6
+MyMath.sum(:sandwich)
+** (FunctionClauseError) no function clause matching in MyMath.sum/1
+    iex:25: MyMath.sum(:sandwich)
+```
+]
+
+---
+
+.left-column[
+## What is it?
+## Organization
+## Types
+## Functions
+## Flow Control
+## Enum
+## Matching
+]
+.right-column[
+### Things we didn't cover
+
+- with
+]
