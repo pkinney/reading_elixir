@@ -8,13 +8,21 @@
   font-family: 'Open Sans', sans-serif;
 }
 
-h1, h2, h3 {
+h1, h2, h3, h4 {
   font-family: 'Oswald', sans-serif;
   font-weight: lighter;
 }
 
 .remark-slide-content h1 {
   font-size: 100px;
+}
+
+.remark-slide-content ul {
+  font-size: 2em
+}
+
+.remark-slide-content ul ul {
+  font-size: 0.8em
 }
 
 /* Two-column layout */

@@ -1,11 +1,9 @@
-class: center, middle
-
 # Reading Elixir
 
 ---
 
 .left-column[
-## What is it?
+## **What is it?**
 ]
 .right-column[
 - Functional language
@@ -13,36 +11,7 @@ class: center, middle
  - Direct access to much of Erlang
  - OTP included
 - Immutable to the max
-- "Looks like Ruby, faster than Node.js"
-]
-
----
-
-.left-column[
-## What is it?
-## **Organization**
-]
-.right-column[
-### Modules
-
-```elixir
-defmodule MyModule do
-  @module_attribute "hi"
-  ...
-end
-```
-
-### Functions
-
-```elixir
-def MyModule do
-  def my_function(a, b \\ 0) do
-    do_add(a, b)
-  end
-
-  defp do_add(a, b), do: a + b
-end
-```
+- "Fun like Ruby, fast like Node.js"
 ]
 
 ---
@@ -75,6 +44,36 @@ hello
 > mix test
 ```
 ]
+
+---
+
+.left-column[
+## What is it?
+## **Organization**
+]
+.right-column[
+### Modules
+
+```elixir
+defmodule MyModule do
+  @module_attribute "hi"
+  ...
+end
+```
+
+### Functions
+
+```elixir
+defmodule MyModule do
+  def my_function(a, b \\ 0) do
+    do_add(a, b)
+  end
+
+  defp do_add(a, b), do: a + b
+end
+```
+]
+
 ---
 
 .left-column[
@@ -131,8 +130,8 @@ end
 ### System Types
 
 ```elixir
-#PID<0.57.0> # self() give my PID
-#Reference<0.0.8.181> # make_ref()
+PID<0.57.0> # self() gives my PID
+Reference<0.0.8.181> # make_ref() makes a new reference
 ```
 ]
 
@@ -265,12 +264,49 @@ is_list('Hello') === true
 ```elixir
 square = fn n -> n*n end
 square.(3) === 9
+```
 
+```elixir
 add = &(&1 + &2)
 add.(1, 2) === 3
+```
 
+```elixir
 dcase = &String.downcase/1
 dcase.("HeLLO") === "hello"
+```
+]
+
+---
+
+.left-column[
+## What is it?
+## Organization
+## Types
+## **Functions**
+]
+.right-column[
+### Pattern Matching
+
+```elixir
+a = 1 # => 1
+1 = a # => 1
+2 = a # => ** (MatchError) no match of right hand side value: 1
+```
+
+```elixir
+list = [1, 2, 3]
+[a, b, c ] = list
+
+[_, d, _] = list
+
+[a, 1, b ] = list #=> ** (MatchError) no match of...
+```
+
+```elixir
+{:ok, %{status_code: 200, body: body}} = HTTPoison.get(@url)
+body # => {"foo":"bar"}
+
 ```
 ]
 
@@ -290,6 +326,7 @@ square = fn
   1 -> "1, duh!"
   n -> n*n
 end
+
 square.(1) === "1, duh"
 square.(2) === 4
 ```
@@ -301,6 +338,7 @@ divide = fn
   a, 1 -> a
   a, b -> a / b
 end
+
 divide.(1, 0) === :nan
 divide.(2, 1) === 2
 divide.(12, 4) === 3.0
@@ -338,6 +376,7 @@ MyMath.sub(2, :sandwich)
 ]
 
 ---
+
 .left-column[
 ## What is it?
 ## Organization
@@ -369,12 +408,119 @@ MyMath.sum(:sandwich)
 ## Organization
 ## Types
 ## Functions
-## Flow Control
-## Enum
-## Matching
+## **Flow**
 ]
 .right-column[
-### Things we didn't cover
+### `cond` & `case`
 
-- with
+```elixir
+cond do
+  length(arr) <= 3  -> :ok
+  length(arr) === 4 -> :too_high
+  true ->  :right_out
+end
+
+case File.open(user_file_name) do
+  {:ok, file} ->
+    process(file)
+  {:error, message} ->
+    IO.puts :stderr, "Couldn't open #{user_file_name}: #{message}"
+end
+```
+
+### `if` & `unless`
+
+```elixir
+if 1 === 1, do: :ok, else: :error
+unless 1 === 1, do: :error, else: :ok
+```
+]
+
+---
+
+.left-column[
+## What is it?
+## Organization
+## Types
+## Functions
+## **Flow**
+]
+.right-column[
+### The Amazing Pipe Operator
+
+```elixir
+people    = DB.customers
+orders    = Orders.for_customers(people)
+sales_tax = tax(orders, 2016)
+filing    = prepare_filing(sales_tax)
+
+filing = prepare_filing(tax(Orders.for_customers(DB.customers), 2013))
+
+filing =
+  DB.customers
+  |> Orders.for_customers
+  |> tax(2016)
+  |> prepare_filing
+```
+]
+
+---
+
+.left-column[
+## What is it?
+## Organization
+## Types
+## Functions
+## Flow
+]
+.right-column[
+### Other words you might hear
+
+- OTP
+  - GenServer
+  - Agent
+- Phoenix
+- Ecto
+- Cowboy
+- Poolboy
+]
+
+---
+
+.left-column[
+## What is it?
+## Organization
+## Types
+## Functions
+## Flow
+]
+.right-column[
+### People to Know
+
+- José Valim (@josevalim)
+- Chris McCord (@chris_mccord)
+- Joe Armstrong (@joeerl)
+]
+
+---
+
+.left-column[
+## What is it?
+## Organization
+## Types
+## Functions
+## Flow
+]
+.right-column[
+### Other resources
+
+- Elixir (elixir-lang.org)
+- Books
+  - Programming Elixir - Dave Thomas
+  - Elixir in Action - Saša Jurić
+  - Metaprogramming Elixir - Chris McCord
+  - Programming Phoenix - Chris McCord
+- Elixir Fountain (elixirfountain.com)
+- Elixir Sips (elixirsips.com)
+- Slack
 ]
