@@ -1,0 +1,40 @@
+@import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+@import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
+@import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+
+.remark-slide-content {
+  background-color: #00a3e0;
+  color: white;
+  font-family: 'Open Sans', sans-serif;
+}
+
+h1, h2, h3 {
+  font-family: 'Oswald', sans-serif;
+  font-weight: lighter;
+}
+
+.remark-slide-content h1 {
+  font-size: 100px;
+}
+
+/* Two-column layout */
+.left-column {
+  width: 20%;
+  height: 92%;
+  float: left;
+}
+.left-column h2:last-of-type, .left-column h3:last-child {
+}
+.right-column {
+  width: 75%;
+  float: right;
+  padding-top: 1em;
+}
+
+.left-column h2 {
+  color: #c1c2c4;
+}
+.left-column h2 strong {
+  color: white;
+  font-weight: lighter;
+}

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Reading Elixir</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <link rel="stylesheet" type="text/css" href="assets/slides.css">
+  <link href='https://fonts.googleapis.com/css?family=Oswald:400,700,300' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,600,400italic,600italic,700,800,700italic,800italic' rel='stylesheet' type='text/css'>
+</head>
+<body>
+  <script src="assets/remark-0.12.0.min.js">
+  </script>
+  <script>
+  remark.macros.scale = function (percentage) {
+    var url = this;
+    return '<img src="' + url + '" style="width: ' + percentage + '" />';
+  };
+  var slideshow = remark.create({
+    sourceUrl: 'slides/slides.md',
+    ratio: '16:9', //default 4:3
+    highlightStyle: 'ir_black',// sunburst also looks good
+    highlightLanguage: 'javascript' //default language
+  });
+  </script>
+</body>
+</html>
