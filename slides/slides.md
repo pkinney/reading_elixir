@@ -845,7 +845,7 @@ a = 1 # => 1
 
 ```elixir
 list = [1, 2, 3]
-[a, b, c ] = list
+[a, b, c] = list
 ```
 ]
 
