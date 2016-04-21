@@ -297,11 +297,10 @@ Reference<0.0.8.181> # make_ref() makes a new reference
 ## **Types**
 ]
 .right-column[
-### Atom
+### Tuple
 
 ```elixir
-:one
-:or_two
+{ :one, 2, "three" }
 ```
 ]
 
@@ -313,11 +312,10 @@ Reference<0.0.8.181> # make_ref() makes a new reference
 ## **Types**
 ]
 .right-column[
-### Atom
+### Tuple
 
 ```elixir
-:one
-:or_two
+{ :one, 2, "three" }
 ```
 
 ### List
@@ -336,11 +334,10 @@ Reference<0.0.8.181> # make_ref() makes a new reference
 ## **Types**
 ]
 .right-column[
-### Atom
+### Tuple
 
 ```elixir
-:one
-:or_two
+{ :one, 2, "three" }
 ```
 
 ### List
@@ -358,6 +355,127 @@ Reference<0.0.8.181> # make_ref() makes a new reference
 
 [42, name: "John", city: "Dallas"]
 [42, {:name, "John"}, {:city, "Dallas"}]
+```
+]
+
+---
+
+.left-column[
+## What is it?
+## Organization
+## **Types**
+]
+.right-column[
+### Strings
+
+```elixir
+"john"
+```
+]
+
+---
+
+.left-column[
+## What is it?
+## Organization
+## **Types**
+]
+.right-column[
+### Strings
+
+```elixir
+name = "john"
+"Hello, #{String.capitalize name}!"
+```
+]
+
+---
+
+.left-column[
+## What is it?
+## Organization
+## **Types**
+]
+.right-column[
+### Strings
+
+```elixir
+name = "john"
+"Hello, #{String.capitalize name}!"
+"Hello, " <> String.capitalize(name) <> "!"
+```
+]
+
+---
+
+.left-column[
+## What is it?
+## Organization
+## **Types**
+]
+.right-column[
+### Strings
+
+```elixir
+name = "john"
+"Hello, #{String.capitalize name}!"
+"Hello, " <> String.capitalize(name) <> "!"
+
+~w{one two three} === ["one", "two", "three"] # sigil
+```
+]
+
+---
+
+.left-column[
+## What is it?
+## Organization
+## **Types**
+]
+.right-column[
+### Strings
+
+```elixir
+name = "john"
+"Hello, #{String.capitalize name}!"
+"Hello, " <> String.capitalize(name) <> "!"
+
+~w{one two three} === ["one", "two", "three"]
+```
+
+### Char List
+
+```elixir
+is_binary("Hello") === true
+is_list('Hello') === true
+```
+]
+
+---
+
+.left-column[
+## What is it?
+## Organization
+## **Types**
+]
+.right-column[
+### Strings
+
+```elixir
+name = "john"
+"Hello, #{String.capitalize name}!"
+"Hello, " <> String.capitalize(name) <> "!"
+
+~w{one two three} === ["one", "two", "three"]
+```
+
+### Char List
+
+```elixir
+is_binary("Hello") === true
+is_list('Hello') === true
+
+'Hello, ' ++ to_char_list(String.capitalize(name)) ++ '!'
 ```
 ]
 
@@ -567,127 +685,6 @@ u.first_name === "John"
 u.role === :user
 
 u.__struct__ === User
-```
-]
-
----
-
-.left-column[
-## What is it?
-## Organization
-## **Types**
-]
-.right-column[
-### Strings
-
-```elixir
-"john"
-```
-]
-
----
-
-.left-column[
-## What is it?
-## Organization
-## **Types**
-]
-.right-column[
-### Strings
-
-```elixir
-name = "john"
-"Hello, #{String.capitalize name}!"
-```
-]
-
----
-
-.left-column[
-## What is it?
-## Organization
-## **Types**
-]
-.right-column[
-### Strings
-
-```elixir
-name = "john"
-"Hello, #{String.capitalize name}!"
-"Hello, " <> String.capitalize(name) <> "!"
-```
-]
-
----
-
-.left-column[
-## What is it?
-## Organization
-## **Types**
-]
-.right-column[
-### Strings
-
-```elixir
-name = "john"
-"Hello, #{String.capitalize name}!"
-"Hello, " <> String.capitalize(name) <> "!"
-
-~w{one two three} === ["one", "two", "three"] # sigil
-```
-]
-
----
-
-.left-column[
-## What is it?
-## Organization
-## **Types**
-]
-.right-column[
-### Strings
-
-```elixir
-name = "john"
-"Hello, #{String.capitalize name}!"
-"Hello, " <> String.capitalize(name) <> "!"
-
-~w{one two three} === ["one", "two", "three"]
-```
-
-### Char List
-
-```elixir
-is_binary("Hello") === true
-is_list('Hello') === true
-```
-]
-
----
-
-.left-column[
-## What is it?
-## Organization
-## **Types**
-]
-.right-column[
-### Strings
-
-```elixir
-name = "john"
-"Hello, #{String.capitalize name}!"
-"Hello, " <> String.capitalize(name) <> "!"
-
-~w{one two three} === ["one", "two", "three"]
-```
-
-### Char List
-
-```elixir
-is_binary("Hello") === true
-is_list('Hello') === true
-
-'Hello, ' ++ to_char_list(String.capitalize(name)) ++ '!'
 ```
 ]
 
