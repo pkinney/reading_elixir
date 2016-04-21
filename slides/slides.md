@@ -1366,7 +1366,7 @@ body
   - Agent
 - Phoenix
 - Ecto
-- Hex (https://hex.pm)
+- Hex ([hex.pm](https://hex.pm))
 ]
 
 ---
@@ -1398,13 +1398,13 @@ body
 .right-column[
 ### Other resources
 
-- Elixir (elixir-lang.org)
+- Elixir ([elixir-lang.org](http://elixir-lang.org))
 - Books
   - Programming Elixir - Dave Thomas
   - Elixir in Action - Saša Jurić
   - Metaprogramming Elixir - Chris McCord
   - Programming Phoenix - Chris McCord
-- Elixir Fountain (elixirfountain.com)
-- Elixir Sips (elixirsips.com)
+- Elixir Fountain ([elixirfountain.com](http://elixirfountain.com))
+- Elixir Sips ([elixirsips.com](http://elixirsips.com))
 - Slack
 ]
