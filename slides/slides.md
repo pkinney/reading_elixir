@@ -1363,7 +1363,9 @@ body
 
 - OTP
   - GenServer
-  - Agent
+  - Supervisor
+  - Task
+  - GenEvent
 - Phoenix
 - Ecto
 - Hex ([hex.pm](https://hex.pm))
