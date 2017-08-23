@@ -17,7 +17,7 @@
 .right-column[
 - Functional language
 - Built on top of Erlang
- - Direct access to much of Erlang
+ - Direct access to all of Erlang
  - OTP included
 ]
 
@@ -29,7 +29,7 @@
 .right-column[
 - Functional language
 - Built on top of Erlang
- - Direct access to much of Erlang
+ - Direct access to all of Erlang
  - OTP included
 - Immutable to the max
 ]
@@ -42,7 +42,7 @@
 .right-column[
 - Functional language
 - Built on top of Erlang
- - Direct access to much of Erlang
+ - Direct access to all of Erlang
  - OTP included
 - Immutable to the max
 - "Fun like Ruby, fast like Node.js"
@@ -199,7 +199,7 @@ defmodule Hello.Mixfile do
   end
 
   def application do
-    [applications: [:logger]]
+    [extra_applications: [:logger]]
   end
 
   defp deps do
@@ -232,7 +232,7 @@ defmodule Hello.Mixfile do
   end
 
   def application do
-    [applications: [:logger]]
+    [extra_applications: [:logger]]
   end
 
   defp deps do
