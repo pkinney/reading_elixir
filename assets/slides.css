@@ -3,8 +3,14 @@
 @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
 
 .remark-slide-content {
+  background-color: #4b285b;
   color: white;
   font-family: 'Open Sans', sans-serif;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Oswald', sans-serif;
+  font-weight: lighter;
 }
 
 .remark-slide-content h1 {
@@ -17,11 +23,6 @@
 
 .remark-slide-content ul ul {
   font-size: 0.8em
-}
-
-.remark-slide-content a {
-  color: #d1d2df;
-  text-decoration: none;
 }
 
 /* Two-column layout */
