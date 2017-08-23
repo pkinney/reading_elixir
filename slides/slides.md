@@ -1365,7 +1365,6 @@ body
   - GenServer
   - Supervisor
   - Task
-  - GenEvent
 - Phoenix
 - Ecto
 - Hex ([hex.pm](https://hex.pm))
